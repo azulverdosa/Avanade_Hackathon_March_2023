@@ -7,15 +7,15 @@ function preventDefault(event) {
   event.preventDefault();
 }
 
-export default function Deposits() {
+export default function Highlights() {
   return (
     <React.Fragment>
-      <Title>Recent Deposits</Title>
+      <Title>Highlights</Title>
       <Typography component="p" variant="h4">
-        $3,024.00
+        Cindy Lauper
       </Typography>
       <Typography color="text.secondary" sx={{ flex: 1 }}>
-        on 15 March, 2019
+        Promoted to CEO on 15 March, 2023
       </Typography>
       <div>
         <Link color="primary" href="#" onClick={preventDefault}>
