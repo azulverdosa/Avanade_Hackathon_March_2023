@@ -22,6 +22,9 @@ import Chart from './Chart';
 import Deposits from './Deposits';
 import Orders from './Orders';
 
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
+
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -111,14 +114,32 @@ function DashboardContent() {
             >
               <MenuIcon />
             </IconButton>
-            <Typography component="h1" variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-              Dashboard
-            </Typography>
-            <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
+            <Box
+              sx={{
+                'display': 'flex',
+                // 'flexDirection': 'row',
+                'alignItems': 'center',
+                // 'justifyContent': 'space-evenly',
+                'flex': 1,
+                '& > *': {
+                  m: 1,
+                },
+              }}
+            >
+              <Typography component="h1" variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
+                Metrics - Change Name?
+              </Typography>
+              <ButtonGroup variant="text" aria-label="text button group" color="inherit">
+                <Button>One</Button>
+                <Button>Two</Button>
+                <Button>Three</Button>
+              </ButtonGroup>
+              <IconButton color="inherit">
+                <Badge badgeContent={4} color="secondary">
+                  <NotificationsIcon />
+                </Badge>
+              </IconButton>
+            </Box>
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>
