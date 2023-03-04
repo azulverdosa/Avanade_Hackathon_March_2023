@@ -17,13 +17,14 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { mainListItems, secondaryListItems } from './listItems';
+import { MainListItems, secondaryListItems } from './listItems';
 import Chart from './Chart';
-import Deposits from './Deposits';
-import Orders from './Orders';
+import Highlights from './Highlights';
+import EmployeeInformation from './EmployeeInformation';
 
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
+import useQueryFilters from '../customHooks/useQueryFilters';
 
 function Copyright(props) {
   return (
@@ -86,10 +87,18 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 const mdTheme = createTheme();
 
-function DashboardContent() {
+function Dashboard() {
   const [open, setOpen] = React.useState(true);
+  const { metricStates, setMetrics } = useQueryFilters();
+
   const toggleDrawer = () => {
     setOpen(!open);
+  };
+
+  const createReport = (e) => {
+    e.preventDefault();
+
+    alert('Report Created');
   };
 
   return (
@@ -127,12 +136,12 @@ function DashboardContent() {
               }}
             >
               <Typography component="h1" variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-                Metrics - Change Name?
+                Your Company's Employee Dempgraphics
               </Typography>
               <ButtonGroup variant="text" aria-label="text button group" color="inherit">
-                <Button>One</Button>
-                <Button>Two</Button>
-                <Button>Three</Button>
+                <Button>Learning Tools</Button>
+                <Button>Articles</Button>
+                <Button>Training Courses</Button>
               </ButtonGroup>
               <IconButton color="inherit">
                 <Badge badgeContent={4} color="secondary">
@@ -156,9 +165,23 @@ function DashboardContent() {
             </IconButton>
           </Toolbar>
           <Divider />
+
           <List component="nav">
-            {mainListItems}
+            <MainListItems states={metricStates} setStates={setMetrics} />
+
+            <Box sx={{ display: 'flex', justifyContent: 'center', margin: 2 }}>
+              <Button
+                style={{ marginBottom: 8, marginLeft: 16, marginTop: 8, marginRight: 16 }}
+                variant="contained"
+                color="success"
+                onClick={createReport}
+              >
+                Create Report
+              </Button>
+            </Box>
+
             <Divider sx={{ my: 1 }} />
+
             {secondaryListItems}
           </List>
         </Drawer>
@@ -188,7 +211,7 @@ function DashboardContent() {
                   <Chart />
                 </Paper>
               </Grid>
-              {/* Recent Deposits */}
+              {/* Recent Highlights */}
               <Grid item xs={12} md={4} lg={3}>
                 <Paper
                   sx={{
@@ -198,13 +221,13 @@ function DashboardContent() {
                     height: 240,
                   }}
                 >
-                  <Deposits />
+                  <Highlights />
                 </Paper>
               </Grid>
               {/* Recent Orders */}
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                  <Orders />
+                  <EmployeeInformation />
                 </Paper>
               </Grid>
             </Grid>
@@ -216,6 +239,4 @@ function DashboardContent() {
   );
 }
 
-export default function Dashboard() {
-  return <DashboardContent />;
-}
+export default Dashboard;
