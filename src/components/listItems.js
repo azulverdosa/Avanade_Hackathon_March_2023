@@ -4,6 +4,8 @@ import * as React from 'react';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import ListSubheader from '@mui/material/ListSubheader';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
 import ListItemIcon from '@mui/material/ListItemIcon';
 import AgeIcon from '@mui/icons-material/SixtyFpsSelect';
@@ -14,9 +16,12 @@ import RaiseIcon from '@mui/icons-material/PriceCheck';
 import DateRangeIcon from '@mui/icons-material/CalendarMonth';
 import SeniorityIcon from '@mui/icons-material/Update';
 import AssignmentIcon from '@mui/icons-material/Assignment';
+import ReportIcon from '@mui/icons-material/Assessment';
 
 import { FormLabel } from '@mui/material';
 import { pink } from '@mui/material/colors';
+
+import { METRIC_NAMES } from '../customHooks/useQueryFilters';
 
 const handleButtonClick = (e) => {
   e.preventDefault();
@@ -24,62 +29,64 @@ const handleButtonClick = (e) => {
   alert('clicked');
 };
 
-export const mainListItems = (
-  // const [selected, setSelected] = useState(false);
-
+export const MainListItems = ({ states, setStates }) => (
   <React.Fragment>
     <ListSubheader component="div" inset>
-      <FormLabel component="legend">CREATE REPORT</FormLabel>
+      <FormLabel component="legend">Report Parameters</FormLabel>
     </ListSubheader>
 
-    <ListItemButton onClick={handleButtonClick}>
+    <ListItemButton selected={states[METRIC_NAMES.age]} onClick={setStates(METRIC_NAMES.age)}>
       <ListItemIcon>
         <AgeIcon />
       </ListItemIcon>
       <ListItemText primary="Age" />
     </ListItemButton>
 
-    <ListItemButton onClick={handleButtonClick}>
+    <ListItemButton selected={states[METRIC_NAMES.gender]} onClick={setStates(METRIC_NAMES.gender)}>
       <ListItemIcon>
-        {/* <BabyChangingStationIcon /> */}
         <GenderIcon />
       </ListItemIcon>
       <ListItemText primary="Gender" />
     </ListItemButton>
 
-    <ListItemButton onClick={handleButtonClick}>
+    <ListItemButton
+      selected={states[METRIC_NAMES.seniority]}
+      onClick={setStates(METRIC_NAMES.seniority)}
+    >
       <ListItemIcon>
         <SeniorityIcon />
       </ListItemIcon>
       <ListItemText primary="Seniority" />
     </ListItemButton>
 
-    <ListItemButton onClick={handleButtonClick}>
+    <ListItemButton selected={states[METRIC_NAMES.salary]} onClick={setStates(METRIC_NAMES.salary)}>
       <ListItemIcon>
         <SalaryIcon />
       </ListItemIcon>
-      <ListItemText primary="Yearly Salary" />
+      <ListItemText primary="Salary" />
     </ListItemButton>
 
-    <ListItemButton onClick={handleButtonClick}>
+    <ListItemButton
+      selected={states[METRIC_NAMES.promotions]}
+      onClick={setStates(METRIC_NAMES.promotions)}
+    >
       <ListItemIcon>
         <PromotionsIcon />
       </ListItemIcon>
-      <ListItemText primary="Number of Promotions" />
+      <ListItemText primary="Promotions" />
     </ListItemButton>
 
-    <ListItemButton divider={true} selected={true} onClick={handleButtonClick}>
+    <ListItemButton selected={states[METRIC_NAMES.raises]} onClick={setStates(METRIC_NAMES.raises)}>
       <ListItemIcon>
         <RaiseIcon />
       </ListItemIcon>
-      <ListItemText primary="Salary Increases (Number of Raises??)" />
+      <ListItemText primary="Raises" />
     </ListItemButton>
 
     <ListItemButton
       sx={{
         backgroundColor: pink[800],
       }}
-      divider={true}
       selected={true}
       onClick={handleButtonClick}
     >
