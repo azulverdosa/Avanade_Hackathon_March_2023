@@ -25,6 +25,7 @@ import EmployeeInformation from './EmployeeInformation';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import useQueryFilters from '../customHooks/useQueryFilters';
+import Trending from './Trending';
 
 function Copyright(props) {
   return (
@@ -89,7 +90,7 @@ const mdTheme = createTheme();
 
 function Dashboard() {
   const [open, setOpen] = React.useState(true);
-  const { metricStates, setMetrics } = useQueryFilters();
+  const { queryResults, makeRequest, metricStates, setMetrics } = useQueryFilters();
 
   const toggleDrawer = () => {
     setOpen(!open);
@@ -98,7 +99,7 @@ function Dashboard() {
   const createReport = (e) => {
     e.preventDefault();
 
-    alert('Report Created');
+    makeRequest();
   };
 
   return (
@@ -126,9 +127,7 @@ function Dashboard() {
             <Box
               sx={{
                 'display': 'flex',
-                // 'flexDirection': 'row',
                 'alignItems': 'center',
-                // 'justifyContent': 'space-evenly',
                 'flex': 1,
                 '& > *': {
                   m: 1,
@@ -196,38 +195,39 @@ function Dashboard() {
           }}
         >
           <Toolbar />
+
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
               {/* Chart */}
-              <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                  <Chart />
-                </Paper>
+              <Grid item xs={12}>
+                <Chart />
               </Grid>
+
               {/* Recent Highlights */}
-              <Grid item xs={12} md={4} lg={3}>
+              <Grid item xs={12}>
                 <Paper
                   sx={{
                     p: 2,
                     display: 'flex',
                     flexDirection: 'column',
-                    height: 240,
+                    height: 'auto',
                   }}
                 >
                   <Highlights />
                 </Paper>
               </Grid>
-              {/* Recent Orders */}
+
+              {/* Trending */}
               <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                  <EmployeeInformation />
+                <Paper
+                  sx={{
+                    p: 2,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    height: 'auto',
+                  }}
+                >
+                  <Trending />
                 </Paper>
               </Grid>
             </Grid>
