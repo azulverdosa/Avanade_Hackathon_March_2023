@@ -23,12 +23,6 @@ import { pink } from '@mui/material/colors';
 
 import { METRIC_NAMES } from '../customHooks/useQueryFilters';
 
-const handleButtonClick = (e) => {
-  e.preventDefault();
-  // setSelect(true);
-  alert('clicked');
-};
-
 export const MainListItems = ({ states, setStates }) => (
   <React.Fragment>
     <ListSubheader component="div" inset>
@@ -83,13 +77,7 @@ export const MainListItems = ({ states, setStates }) => (
       <ListItemText primary="Raises" />
     </ListItemButton>
 
-    <ListItemButton
-      sx={{
-        backgroundColor: pink[800],
-      }}
-      selected={true}
-      onClick={handleButtonClick}
-    >
+    <ListItemButton>
       <ListItemIcon>
         <DateRangeIcon />
       </ListItemIcon>
