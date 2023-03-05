@@ -4,12 +4,11 @@ import numpy as np
 
 # Graphs to make:
 
-# 1. age, gender, salary, role
+# 1. Gender, Role - Finance
 """
-role: each role in a different colour
-gender: female in dot, male in box points
-age: age in the x axis
-salary: salary in the y axis
+purpose: ratio of each gender in a specific role - Finance
+role: Finance department
+gender: female and male each have their own slice in different colours
 
 """
 
@@ -20,13 +19,47 @@ gender in two colours
 average salary for each role
 
 """
-
-
-# receive a request successfully for this test case:
 # 3. female population over the years
+
+"""
+line graph
+each role has its own colour
+y-axis: % of role population that is female
+
+"""
+# 4. WL balance, Gender, Seniority
+
+"""
+line graph, with lines of best fit
+Gender: each gender has its own colour
+y-axis: personal rating of work life balance
+x-axis: # of years in the company (Seniority)
+
+"""
+
 # returns graph png to frontend, to display
 # return a csv, with only employee info in graph
 # return a string with recommendations
+
+
+
+#################################################
+#GRAPH 1. Gender, Role #
+#################################################
+plt.style.use("fivethirtyeight")
+
+slices = [50, 72]
+labels = ['Female: 50', 'Male: 72']
+explode = [0.1, 0]
+
+plt.pie(slices, labels=labels, explode=explode, shadow=True,
+        startangle=90, autopct='%1.1f%%',
+        wedgeprops={'edgecolor': 'black'})
+
+plt.title("Finance Department")
+plt.tight_layout()
+plt.savefig("./src/images/GenderRoleFinance.png")
+
 
 ############################################
 #GRAPH 3. female population over the years #
@@ -99,7 +132,7 @@ hr_list_f = []
 hr_list_m = []
 
 # make a graph of year vs fprofessionals
-fig2, ax2 = plt.subplots(figsize=(10, 7))
+fig2, ax2 = plt.subplots(figsize=(20, 15))
 for i in range(1, len(df2)):
     if df2["gender"][i] == 'm':
         if df2["department"][i] == "Sales & Marketing":
@@ -196,7 +229,7 @@ insert_data_labels(barFemale)
 
 plt.savefig("./src/images/SalaryGenderRole.png")
 
-"""
+
 #################################################
 #SAMPLE GRAPH. Work life balance over seniority #
 #################################################
@@ -254,5 +287,4 @@ txt2="Line of best fit - female employees: "
 text = txt1 + txt1stat + txt2 + txt2stat
 plt.figtext(0.5, 0.01, text , wrap=True, horizontalalignment='center', fontsize=12)
 plt.subplots_adjust(bottom = 0.18)
-plt.show()
-"""
+plt.savefig("./src/images/WLSeniority.png")

@@ -20,10 +20,10 @@ employee_id,department,region,education,gender,recruitment_channel,no_of_trainin
 30196,Analytics,region_25,Bachelor's,m,sourcing,1,29,5,6,0,84,0,4,3,4,302407
 75610,Analytics,region_32,Bachelor's,m,other,1,29,1,3,0,81,1,1,4,1,222198
 58789,Finance,region_11,Bachelor's,f,other,1,28,3,4,0,63,2,2,2,2,121685
-52057,Finance,region_22,Master's & above,m,sourcing,2,39,5,7,0,59,0,4,3,4,345092
-58536,Finance,region_31,Bachelor's,m,other,2,26,1,2,0,61,0,4,3,4,125737
-24104,Finance,region_2,Bachelor's,m,sourcing,1,20,4,2,0,60,0,4,3,4,104146
-77981,Finance,region_22,Bachelor's,m,other,1,27,,1,1,58,1,1,4,1,75921
+52057,Finance,region_22,Master's & above,f,sourcing,2,39,5,7,0,59,0,4,3,4,345092
+58536,Finance,region_31,Bachelor's,f,other,2,26,1,2,0,61,0,4,3,4,125737
+24104,Finance,region_2,Bachelor's,f,sourcing,1,20,4,2,0,60,0,4,3,4,104146
+77981,Finance,region_22,Bachelor's,f,other,1,27,,1,1,58,1,1,4,1,75921
 51256,Finance,region_2,Master's & above,m,other,1,60,5,17,0,59,0,4,3,4,282091
 36371,Finance,region_28,Master's & above,m,other,2,34,3,7,0,56,0,4,3,4,158698
 50593,Finance,region_23,Bachelor's,m,sourcing,1,31,,1,0,56,0,4,3,4,97652
