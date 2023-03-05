@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import axios from 'axios';
 
 export const METRIC_NAMES = {
   age: 'age',
@@ -16,6 +17,9 @@ const useQueryFilters = () => {
   const [salarySelected, setSalarySelected] = useState(false);
   const [promotionsSelected, setPromotionsSelected] = useState(false);
   const [raisesSelected, setRaisesSelected] = useState(false);
+  const [queryResults, setQueryResults] = useState(
+    'https://i.insider.com/6230badfdc43bd0018947b8a?width=1200&format=jpeg'
+  );
 
   const metrics = {
     [METRIC_NAMES.age]: {
@@ -60,9 +64,39 @@ const useQueryFilters = () => {
     {}
   );
 
+  const queryFilters = Object.entries(metricStates)
+    .map(([metricName, isMetricSelected]) => isMetricSelected && metricName)
+    .filter(Boolean);
+
+  const dateRange = [['2-19', '4-22']];
+
+  const makeRequest = async () => {
+    try {
+      const res = await axios.get('http://mockapi/graphs', {
+        params: {
+          keywords: queryFilters.join(','),
+          dates: dateRange.join(','),
+        },
+        responseType: 'blob',
+      });
+
+      if (res.status === 200) {
+        console.log('Query Sent');
+
+        // get res.data >>> an image blob
+        // const blobURL = URL.createObjectURL(res.data)
+        // setQueryResults(blobURL)
+      }
+    } catch (err) {
+      console.error('ERROR: ', err);
+    }
+  };
+
   return {
+    makeRequest,
     metricStates,
     setMetrics,
+    queryResults,
   };
 };
 
