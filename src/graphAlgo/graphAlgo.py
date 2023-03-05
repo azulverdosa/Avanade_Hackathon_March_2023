@@ -10,6 +10,8 @@ purpose: ratio of each gender in a specific role - Finance
 role: Finance department
 gender: female and male each have their own slice in different colours
 
+DATASET USED: EmployeeDataSet.csv
+OUTPUT: GenderRoleFinance.png
 """
 
 # 2. gender, average salary, role
@@ -18,6 +20,8 @@ Bar graph
 gender in two colours
 average salary for each role
 
+DATASET USED: EmployeeDataSet.csv
+OUTPUT: SalaryGenderRole.png
 """
 # 3. female population over the years
 
@@ -26,6 +30,8 @@ line graph
 each role has its own colour
 y-axis: % of role population that is female
 
+DATASET USED: femaledata.csv
+OUTPUT: FemalePercentageOverYearsGraph.png
 """
 # 4. WL balance, Gender, Seniority
 
@@ -35,6 +41,8 @@ Gender: each gender has its own colour
 y-axis: personal rating of work life balance
 x-axis: # of years in the company (Seniority)
 
+DATASET USED: EmployeeDataSet.csv
+OUTPUT: WLSeniority.png
 """
 
 # returns graph png to frontend, to display
