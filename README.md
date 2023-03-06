@@ -39,45 +39,57 @@ At the heart of this issue, we believe that companies could be more transparent 
 
 ## Features
 
-Graph generator:
+Welcome to BRIDGE:
+
+- Landing Page
+
+  ![Home Page](src/images/home.png 'Home Page')
+  Description of screenshot here
+
+Selecting Paramters:
+
+- Which metrics you want in your graph
+  ![metric selection](src/images/selectingparameters.png 'Home Page')
+  Description of screenshot here
+
+Graph Generator:
 
 - Generates a visualisation based on the parameters you entered
-  ![Home Page](/images/4.png 'Home Page')
-  Description of screenshot here
+  ![graph](src/images/graph.png 'Home Page')
 
 Employees Included:
 
 - Complete list of the employees included in the data set:
 
-  ![employees](/images/employee.png 'Home Page')
+  ![employees](src/images/employees.png 'Home Page')
   Description of screenshot here
 
 Next Steps:
 
 - Suggestions based on the results:
 
-  ![Nextsteps](./screenshots/4.png 'Home Page')
+  ![Nextsteps](src/images/suggestions.png 'Home Page')
   Description of screenshot here
 
 Activity Log:
 
 - Company and employee highlighths:
 
-  ![highlights](/screenshots/4.png 'Home Page')
+  ![highlights](src/images/highlights.png 'Home Page')
   Description of screenshot here
 
 Articles:
 
 - List of trending articles:
 
-  ![articles](./images/articles.png 'Home Page')
+  ![articles](src/images/articles.png 'Home Page')
   Description of screenshot here
 
 Learning Tools:
 
-- Training for employees:
+- Training for employees, it's not currently set up for internal training but it sends you to Udemy for courses
 
-  ![Home Page](/screenshots/4.png 'Home Page')
+  ![learning tools](src/images/learning.png 'Home Page')
   Description of screenshot here
 
 ## Setup
