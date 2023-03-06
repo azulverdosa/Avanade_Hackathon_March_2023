@@ -2,15 +2,11 @@ import * as React from 'react';
 // import { ResponsiveContainer } from 'recharts';
 import Title from './Title';
 
-import useQueryFilters from '../customHooks/useQueryFilters';
 import { Box, Link, Paper } from '@mui/material';
 import EmployeeInformation from './EmployeeInformation';
 import NextSteps from './NextSteps';
-import SaveIcon from '@mui/icons-material/Save';
 
-export default function Chart() {
-  const { queryResults } = useQueryFilters();
-
+export default function Chart({ queryResults }) {
   function preventDefault(event) {
     event.preventDefault();
   }
@@ -34,6 +30,9 @@ export default function Chart() {
             Save Results
             {/* <SaveIcon /> */}
           </Link>
+          {/* <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
+            Favourite
+          </Link> */}
           <Box style={{ display: 'flex', flexDirection: 'column' }} sx={{ mt: 3 }}>
             <EmployeeInformation />
           </Box>
