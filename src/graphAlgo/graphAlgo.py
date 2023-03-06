@@ -4,13 +4,16 @@ import numpy as np
 
 # Graphs to make:
 
-# 1. Gender, Role - Finance
+# 1. Gender, Role
 """
-purpose: ratio of each gender in a specific role - Finance
-role: Finance department
+purpose: ratio of each gender in a each department
+role: aka department
 gender: female and male each have their own slice in different colours
 
 DATASET USED: EmployeeDataSet.csv
+OUTPUT: GenderRoleHeadcountPieCharts.png
+
+Extra: A variation of this would be to specify a sepcific department 
 OUTPUT: GenderRoleFinance.png
 """
 
@@ -54,19 +57,65 @@ OUTPUT: WLSeniority.png
 #################################################
 #GRAPH 1. Gender, Role #
 #################################################
-plt.style.use("fivethirtyeight")
+# create a figure with subplots of each department
 
-slices = [50, 72]
-labels = ['Female: 50', 'Male: 72']
+plt.style.use("fivethirtyeight")
+# plot each pie chart in a separate subplot
+
+slices1 = [50, 72]
+labels1 = ['Female: 50', 'Male: 72']
+slices2 = [40, 32]
+labels2 = ['Female: 40', 'Male: 32']
+slices3 = [63, 52]
+labels3 = ['Female: 63', 'Male: 52']
+slices4 = [21, 22]
+labels4 = ['Female: 21', 'Male: 22']
+slices5 = [34, 37]
+labels5 = ['Female: 34', 'Male: 37']
+slices6 = [45, 40]
+labels6 = ['Female: 45', 'Male: 40']
 explode = [0.1, 0]
 
-plt.pie(slices, labels=labels, explode=explode, shadow=True,
+f, axarr = plt.subplots(3, 2, figsize=(15, 12))
+
+axarr[0,0].pie(slices1, labels=labels1, explode=explode, shadow=True,
         startangle=90, autopct='%1.1f%%',
         wedgeprops={'edgecolor': 'black'})
+axarr[0,0].set_title("Tech")
+axarr[0,0].axis('off')
 
-plt.title("Finance Department")
-plt.tight_layout()
-plt.savefig("./src/images/GenderRoleFinance.png")
+axarr[0,1].pie(slices2, labels=labels2, explode=explode, shadow=True,
+        startangle=90, autopct='%1.1f%%',
+        wedgeprops={'edgecolor': 'black'})
+axarr[0,1].set_title("Finance")
+axarr[0,1].axis('off')
+
+axarr[1,0].pie(slices3, labels=labels3, explode=explode, shadow=True,
+        startangle=90, autopct='%1.1f%%',
+        wedgeprops={'edgecolor': 'black'})
+axarr[1,0].set_title("Sales")
+axarr[1,0].axis('off')
+
+axarr[1,1].pie(slices4, labels=labels4, explode=explode, shadow=True,
+        startangle=90, autopct='%1.1f%%',
+        wedgeprops={'edgecolor': 'black'})
+axarr[1,1].set_title("Operations")
+axarr[1,1].axis('off')
+
+axarr[2,0].pie(slices5, labels=labels5, explode=explode, shadow=True,
+        startangle=90, autopct='%1.1f%%',
+        wedgeprops={'edgecolor': 'black'})
+axarr[2,0].set_title("HR")
+axarr[2,0].axis('off')
+
+axarr[2,1].pie(slices6, labels=labels6, explode=explode, shadow=True,
+        startangle=90, autopct='%1.1f%%',
+        wedgeprops={'edgecolor': 'black'})
+axarr[2,1].set_title("Analytics")
+axarr[2,1].axis('off')
+
+#plt.show()
+plt.savefig("./src/images/GenderRoleHeadcountPieCharts.png")
 
 
 ############################################
