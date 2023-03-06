@@ -9,6 +9,7 @@ import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
+import AssessmentIcon from '@mui/icons-material/Assessment';
 import Badge from '@mui/material/Badge';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -195,45 +196,81 @@ function Dashboard() {
           <Divider />
 
           <List component="nav">
+            {/* Main parameter selections */}
             <MainListItems states={metricStates} setStates={setMetrics} />
 
             <Box sx={{ display: 'flex', justifyContent: 'center', margin: 2 }}>
-              <Button
-                style={{ marginBottom: 8, marginLeft: 16, marginTop: 8, marginRight: 16 }}
-                variant="contained"
-                color="success"
-                onClick={createReport}
-              >
-                Create Report
-              </Button>
+              {open ? (
+                <Button
+                  style={{ marginBottom: 8, marginLeft: 16, marginTop: 8, marginRight: 16 }}
+                  variant="contained"
+                  color="success"
+                  onClick={createReport}
+                >
+                  Create Report
+                </Button>
+              ) : (
+                <Button
+                  style={{ marginBottom: 8, marginLeft: 16, marginTop: 8, marginRight: 16 }}
+                  variant="contained"
+                  color="success"
+                  onClick={createReport}
+                >
+                  <AssessmentIcon />
+                </Button>
+              )}
             </Box>
 
             <Divider sx={{ my: 1 }} />
 
+            {/* Lifestyle parameter selections */}
             <SecondaryListItems states={metricStates} setStates={setMetrics} />
             <Box sx={{ display: 'flex', justifyContent: 'center', margin: 2 }}>
-              <Button
-                style={{ marginBottom: 8, marginLeft: 16, marginTop: 8, marginRight: 16 }}
-                variant="contained"
-                color="success"
-                onClick={createReport}
-              >
-                Create Report
-              </Button>
+              {open ? (
+                <Button
+                  style={{ marginBottom: 8, marginLeft: 16, marginTop: 8, marginRight: 16 }}
+                  variant="contained"
+                  color="success"
+                  onClick={createReport}
+                >
+                  Create Report
+                </Button>
+              ) : (
+                <Button
+                  style={{ marginBottom: 8, marginLeft: 16, marginTop: 8, marginRight: 16 }}
+                  variant="contained"
+                  color="success"
+                  onClick={createReport}
+                >
+                  <AssessmentIcon />
+                </Button>
+              )}
             </Box>
 
             <Divider sx={{ my: 1 }} />
 
+            {/* favouroted selections */}
             <FavouritesList states={metricStates} setStates={setMetrics} />
             <Box sx={{ display: 'flex', justifyContent: 'center', margin: 2 }}>
-              <Button
-                style={{ marginBottom: 8, marginLeft: 16, marginTop: 8, marginRight: 16 }}
-                variant="contained"
-                color="success"
-                onClick={createReport}
-              >
-                Create Report
-              </Button>
+              {open ? (
+                <Button
+                  style={{ marginBottom: 8, marginLeft: 16, marginTop: 8, marginRight: 16 }}
+                  variant="contained"
+                  color="success"
+                  onClick={createReport}
+                >
+                  Create Report
+                </Button>
+              ) : (
+                <Button
+                  style={{ marginBottom: 8, marginLeft: 16, marginTop: 8, marginRight: 16 }}
+                  variant="contained"
+                  color="success"
+                  onClick={createReport}
+                >
+                  <AssessmentIcon />
+                </Button>
+              )}
             </Box>
           </List>
         </Drawer>
@@ -262,7 +299,6 @@ function Dashboard() {
               </Grid>
 
               {/* Recent Highlights */}
-
               <Grid item xs={12}>
                 <Highlights show={showHighlights} />
               </Grid>
