@@ -137,7 +137,7 @@ function Dashboard() {
               }}
             >
               <Typography component="h1" variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-                Bridge
+                BRIDGE
               </Typography>
               <ButtonGroup variant="text" aria-label="text button group" color="inherit">
                 <Button
