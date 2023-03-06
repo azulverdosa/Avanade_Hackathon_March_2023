@@ -35,31 +35,42 @@ At the heart of this issue, we believe that companies could be more transparent 
 
 ## Limitations
 
-Currently the graphs are not dynamically generated because it took too much time to figure out out to connect an API to make requests to generate the visialise ations. The only graphs that generate are the Females at Work and Ffnance report in the favouroites list, the Work Life Balance report in the Lifestyle reports, the selected parameters of Gender+ Salary + Position will generate an image and, Gender + Position
+> Currently the graphs are not dynamically generated because it took too much time to figure out out to connect an API to make requests to generate the visialise ations. The only graphs that generate are the Females at Work and Ffnance report in the favouroites list, the Work Life Balance report in the Lifestyle reports, the selected parameters of Gender+ Salary + Position will generate an image and, Gender + Position. We plan on continuing to develop the APi to be able to generate the graph dynamically.
 
 ## Features
 
 Graph generator:
 
 - Generates a visualisation based on the parameters you entered
+  ![Home Page](/images/4.png 'Home Page')
+  Description of screenshot here
 
 Employees Included:
 
 - Complete list of the employees included in the data set:
 
+  ![employees](/images/employee.png 'Home Page')
+  Description of screenshot here
+
 Next Steps:
 
 - Suggestions based on the results:
+
+  ![Nextsteps](./screenshots/4.png 'Home Page')
+  Description of screenshot here
 
 Activity Log:
 
 - Company and employee highlighths:
 
+  ![highlights](/screenshots/4.png 'Home Page')
+  Description of screenshot here
+
 Articles:
 
 - List of trending articles:
 
-  ![Home Page](/screenshots/4.png 'Home Page')
+  ![articles](./images/articles.png 'Home Page')
   Description of screenshot here
 
 Learning Tools:
