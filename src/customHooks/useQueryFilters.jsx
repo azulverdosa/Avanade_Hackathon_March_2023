@@ -171,6 +171,7 @@ const useQueryFilters = () => {
     metricStates,
     setMetrics,
     queryResults,
+    setQueryResults,
   };
 };
 
