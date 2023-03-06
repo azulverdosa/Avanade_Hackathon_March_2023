@@ -71,6 +71,19 @@ const useQueryFilters = () => {
     },
   };
 
+  const clearSelected = () => {
+    setAgeSelected(false);
+    setGenderSelected(false);
+    setSenioritySelected(false);
+    setSalarySelected(false);
+    setPromotionsSelected(false);
+    setPositionSelected(false);
+    setWorklifeSelected(false);
+    setFemalesAtWorkSelected(false);
+    setFinanceSelected(false);
+    setVacaySelected(false);
+  };
+
   const setMetrics = (metricName) => (event) => {
     const metric = metrics[metricName];
 
@@ -124,6 +137,8 @@ const useQueryFilters = () => {
       error,
     ].filter(Boolean);
     setQueryResults(...blah);
+    clearSelected();
+
     console.log('Query Sent');
 
     console.log(queryFilters);
