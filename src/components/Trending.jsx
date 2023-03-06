@@ -13,7 +13,7 @@ export default function Trending() {
     // <React.Fragment>
     <Box style={{ display: 'flex', flexDirection: 'column' }}>
       <Box>
-        <Title>Trending</Title>
+        <Title id="trending">Trending</Title>
 
         {/* <Box style={{ display: 'flex' }}>
           <img
