@@ -145,17 +145,15 @@ function Dashboard() {
                     e.preventDefault();
                     setShowHighlights(true);
                     setShowTrending(false);
-                    console.log('click');
                   }}
                 >
-                  Highlights
+                  Activity Log
                 </Button>
                 <Button
                   onClick={(e) => {
                     e.preventDefault();
                     setShowTrending(true);
-                    setShowHighlights(true);
-                    console.log('click');
+                    setShowHighlights(false);
                   }}
                 >
                   Articles
