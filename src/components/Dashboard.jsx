@@ -17,7 +17,7 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { MainListItems, secondaryListItems } from './listItems';
+import { MainListItems, SecondaryListItems, FavouritesList } from './listItems';
 import Chart from './Chart';
 import Highlights from './Highlights';
 import EmployeeInformation from './EmployeeInformation';
@@ -181,7 +181,31 @@ function Dashboard() {
 
             <Divider sx={{ my: 1 }} />
 
-            {secondaryListItems}
+            <SecondaryListItems states={metricStates} setStates={setMetrics} />
+            <Box sx={{ display: 'flex', justifyContent: 'center', margin: 2 }}>
+              <Button
+                style={{ marginBottom: 8, marginLeft: 16, marginTop: 8, marginRight: 16 }}
+                variant="contained"
+                color="success"
+                onClick={createReport}
+              >
+                Create Report
+              </Button>
+            </Box>
+
+            <Divider sx={{ my: 1 }} />
+
+            <FavouritesList states={metricStates} setStates={setMetrics} />
+            <Box sx={{ display: 'flex', justifyContent: 'center', margin: 2 }}>
+              <Button
+                style={{ marginBottom: 8, marginLeft: 16, marginTop: 8, marginRight: 16 }}
+                variant="contained"
+                color="success"
+                onClick={createReport}
+              >
+                Create Report
+              </Button>
+            </Box>
           </List>
         </Drawer>
         <Box
@@ -200,7 +224,7 @@ function Dashboard() {
             <Grid container spacing={3}>
               {/* Chart */}
               <Grid item xs={12}>
-                <Chart />
+                <Chart queryResults={queryResults} />
               </Grid>
 
               {/* Recent Highlights */}
