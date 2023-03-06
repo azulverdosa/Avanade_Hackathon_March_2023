@@ -18,7 +18,7 @@ import AddHomeWorkIcon from '@mui/icons-material/AddHomeWork';
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 
-import { Button, ButtonGroup, FormLabel } from '@mui/material';
+import { FormLabel } from '@mui/material';
 
 import { METRIC_NAMES } from '../customHooks/useQueryFilters';
 
