@@ -20,7 +20,6 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import { MainListItems, SecondaryListItems, FavouritesList } from './listItems';
 import Chart from './Chart';
 import Highlights from './Highlights';
-import EmployeeInformation from './EmployeeInformation';
 
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
