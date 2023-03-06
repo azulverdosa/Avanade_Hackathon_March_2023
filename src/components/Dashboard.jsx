@@ -89,6 +89,9 @@ const mdTheme = createTheme();
 
 function Dashboard() {
   const [open, setOpen] = React.useState(true);
+  const [showHighlights, setShowHighlights] = React.useState(false);
+  const [showTrending, setShowTrending] = React.useState(false);
+
   const { queryResults, makeRequest, metricStates, setMetrics } = useQueryFilters();
 
   const toggleDrawer = () => {
@@ -134,12 +137,32 @@ function Dashboard() {
               }}
             >
               <Typography component="h1" variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-                Your Company's Employee Dempgraphics
+                Employee Dempgraphics
               </Typography>
               <ButtonGroup variant="text" aria-label="text button group" color="inherit">
-                <Button>Learning Tools</Button>
-                <Button>Articles</Button>
-                <Button>Training Courses</Button>
+                <Button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setShowHighlights(true);
+                    setShowTrending(false);
+                    console.log('click');
+                  }}
+                >
+                  Highlights
+                </Button>
+                <Button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setShowTrending(true);
+                    setShowHighlights(true);
+                    console.log('click');
+                  }}
+                >
+                  Articles
+                </Button>
+                <Button component="button" variant="body2" href="https://www.udemy.com/">
+                  Learning Tools
+                </Button>
               </ButtonGroup>
               <IconButton color="inherit">
                 <Badge badgeContent={4} color="secondary">
@@ -227,31 +250,14 @@ function Dashboard() {
               </Grid>
 
               {/* Recent Highlights */}
+
               <Grid item xs={12}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 'auto',
-                  }}
-                >
-                  <Highlights />
-                </Paper>
+                <Highlights show={showHighlights} />
               </Grid>
 
               {/* Trending */}
               <Grid item xs={12}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 'auto',
-                  }}
-                >
-                  <Trending />
-                </Paper>
+                <Trending show={showTrending} />
               </Grid>
             </Grid>
             <Copyright sx={{ pt: 4 }} />
