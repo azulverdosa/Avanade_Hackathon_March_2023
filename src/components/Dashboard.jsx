@@ -101,6 +101,7 @@ function Dashboard() {
 
   const createReport = (e) => {
     e.preventDefault();
+    setShowHome(false);
 
     makeRequest();
   };
