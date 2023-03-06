@@ -24,6 +24,7 @@ import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import useQueryFilters from '../customHooks/useQueryFilters';
 import Trending from './Trending';
+import HomePage from './HomePage';
 
 function Copyright(props) {
   return (
@@ -90,6 +91,7 @@ function Dashboard() {
   const [open, setOpen] = React.useState(true);
   const [showHighlights, setShowHighlights] = React.useState(false);
   const [showTrending, setShowTrending] = React.useState(false);
+  const [showHome, setShowHome] = React.useState(true);
 
   const { queryResults, makeRequest, metricStates, setMetrics } = useQueryFilters();
 
@@ -144,6 +146,7 @@ function Dashboard() {
                     e.preventDefault();
                     setShowHighlights(true);
                     setShowTrending(false);
+                    setShowHome(false);
                   }}
                 >
                   Activity Log
@@ -153,6 +156,7 @@ function Dashboard() {
                     e.preventDefault();
                     setShowTrending(true);
                     setShowHighlights(false);
+                    setShowHome(false);
                   }}
                 >
                   Articles
@@ -241,6 +245,11 @@ function Dashboard() {
 
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
+              {/* HomePage */}
+              <Grid item xs={12}>
+                <HomePage show={showHome} />
+              </Grid>
+
               {/* Chart */}
               <Grid item xs={12}>
                 <Chart queryResults={queryResults} />
