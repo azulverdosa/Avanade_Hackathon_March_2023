@@ -93,7 +93,8 @@ function Dashboard() {
   const [showTrending, setShowTrending] = React.useState(false);
   const [showHome, setShowHome] = React.useState(true);
 
-  const { queryResults, makeRequest, metricStates, setMetrics } = useQueryFilters();
+  const { setQueryResults, queryResults, makeRequest, metricStates, setMetrics } =
+    useQueryFilters();
 
   const toggleDrawer = () => {
     setOpen(!open);
@@ -102,6 +103,8 @@ function Dashboard() {
   const createReport = (e) => {
     e.preventDefault();
     setShowHome(false);
+    setShowTrending(false);
+    setShowHighlights(false);
 
     makeRequest();
   };
@@ -148,6 +151,7 @@ function Dashboard() {
                     setShowHighlights(true);
                     setShowTrending(false);
                     setShowHome(false);
+                    setQueryResults(false);
                   }}
                 >
                   Activity Log
@@ -158,6 +162,7 @@ function Dashboard() {
                     setShowTrending(true);
                     setShowHighlights(false);
                     setShowHome(false);
+                    setQueryResults(false);
                   }}
                 >
                   Articles
