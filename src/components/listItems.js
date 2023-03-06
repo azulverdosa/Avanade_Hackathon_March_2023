@@ -17,6 +17,11 @@ import DateRangeIcon from '@mui/icons-material/CalendarMonth';
 import SeniorityIcon from '@mui/icons-material/Update';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import ReportIcon from '@mui/icons-material/Assessment';
+import WorkIcon from '@mui/icons-material/Work';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import AddHomeWorkIcon from '@mui/icons-material/AddHomeWork';
+import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
+import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 
 import { FormLabel } from '@mui/material';
 import { pink } from '@mui/material/colors';
@@ -70,11 +75,14 @@ export const MainListItems = ({ states, setStates }) => (
       <ListItemText primary="Promotions" />
     </ListItemButton>
 
-    <ListItemButton selected={states[METRIC_NAMES.raises]} onClick={setStates(METRIC_NAMES.raises)}>
+    <ListItemButton
+      selected={states[METRIC_NAMES.position]}
+      onClick={setStates(METRIC_NAMES.position)}
+    >
       <ListItemIcon>
-        <RaiseIcon />
+        <WorkIcon />
       </ListItemIcon>
-      <ListItemText primary="Raises" />
+      <ListItemText primary="Position" />
     </ListItemButton>
 
     <ListItemButton>
@@ -86,31 +94,65 @@ export const MainListItems = ({ states, setStates }) => (
   </React.Fragment>
 );
 
-export const secondaryListItems = (
+export const SecondaryListItems = ({ states, setStates }) => (
   <React.Fragment>
     <ListSubheader component="div" inset>
-      Saved reports
+      <FormLabel component="legend">Lifestyle Reports</FormLabel>
     </ListSubheader>
 
-    <ListItemButton>
+    <ListItemButton selected={states[METRIC_NAMES.vacay]} onClick={setStates(METRIC_NAMES.vacay)}>
       <ListItemIcon>
-        <AssignmentIcon />
+        <BeachAccessIcon />
       </ListItemIcon>
-      <ListItemText primary="Current month" />
+      <ListItemText primary="Vacation Time" />
     </ListItemButton>
 
-    <ListItemButton>
+    <ListItemButton
+      selected={states[METRIC_NAMES.worklife]}
+      onClick={setStates(METRIC_NAMES.worklife)}
+    >
       <ListItemIcon>
-        <AssignmentIcon />
+        <AddHomeWorkIcon />
       </ListItemIcon>
-      <ListItemText primary="Last quarter" />
+      <ListItemText primary="Work-Life" />
     </ListItemButton>
 
-    <ListItemButton>
+    <ListItemButton
+      selected={states[METRIC_NAMES.satisfaction]}
+      onClick={setStates(METRIC_NAMES.satisfaction)}
+    >
       <ListItemIcon>
-        <AssignmentIcon />
+        <ThumbUpOffAltIcon />
       </ListItemIcon>
-      <ListItemText primary="Year-end" />
+      <ListItemText primary="Job Satisfaction" />
+    </ListItemButton>
+  </React.Fragment>
+);
+
+export const FavouritesList = ({ states, setStates }) => (
+  <React.Fragment>
+    <ListSubheader component="div" inset>
+      <FormLabel component="legend">Favourites Reports</FormLabel>
+    </ListSubheader>
+
+    <ListItemButton
+      selected={states[METRIC_NAMES.femalesAtWork]}
+      onClick={setStates(METRIC_NAMES.femalesAtWork)}
+    >
+      <ListItemIcon>
+        <FavoriteBorderIcon />
+      </ListItemIcon>
+      <ListItemText primary="Females at Work" />
+    </ListItemButton>
+
+    <ListItemButton
+      selected={states[METRIC_NAMES.finance]}
+      onClick={setStates(METRIC_NAMES.finance)}
+    >
+      <ListItemIcon>
+        <FavoriteBorderIcon />
+      </ListItemIcon>
+      <ListItemText primary="Finance" />
     </ListItemButton>
   </React.Fragment>
 );
