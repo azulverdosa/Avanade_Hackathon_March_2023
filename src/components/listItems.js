@@ -4,27 +4,21 @@ import * as React from 'react';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import ListSubheader from '@mui/material/ListSubheader';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
 
 import ListItemIcon from '@mui/material/ListItemIcon';
 import AgeIcon from '@mui/icons-material/SixtyFpsSelect';
 import GenderIcon from '@mui/icons-material/Wc';
 import PromotionsIcon from '@mui/icons-material/FileUpload';
 import SalaryIcon from '@mui/icons-material/AttachMoney';
-import RaiseIcon from '@mui/icons-material/PriceCheck';
 import DateRangeIcon from '@mui/icons-material/CalendarMonth';
 import SeniorityIcon from '@mui/icons-material/Update';
-import AssignmentIcon from '@mui/icons-material/Assignment';
-import ReportIcon from '@mui/icons-material/Assessment';
 import WorkIcon from '@mui/icons-material/Work';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import AddHomeWorkIcon from '@mui/icons-material/AddHomeWork';
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 
-import { FormLabel } from '@mui/material';
-import { pink } from '@mui/material/colors';
+import { Button, ButtonGroup, FormLabel } from '@mui/material';
 
 import { METRIC_NAMES } from '../customHooks/useQueryFilters';
 
