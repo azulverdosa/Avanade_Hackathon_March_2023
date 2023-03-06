@@ -7,7 +7,11 @@ export const METRIC_NAMES = {
   seniority: 'seniority',
   salary: 'salary',
   promotions: 'promotions',
-  raises: 'raises',
+  position: 'position',
+  worklife: 'work life',
+  femalesAtWork: 'females at work',
+  finance: 'finance',
+  vacay: 'vacay',
 };
 
 const useQueryFilters = () => {
@@ -16,10 +20,13 @@ const useQueryFilters = () => {
   const [senioritySelected, setSenioritySelected] = useState(false);
   const [salarySelected, setSalarySelected] = useState(false);
   const [promotionsSelected, setPromotionsSelected] = useState(false);
-  const [raisesSelected, setRaisesSelected] = useState(false);
-  const [queryResults, setQueryResults] = useState(
-    'https://i.insider.com/6230badfdc43bd0018947b8a?width=1200&format=jpeg'
-  );
+  const [positionSelected, setPositionSelected] = useState(false);
+  const [worklifeSelected, setWorklifeSelected] = useState(false);
+  const [femalesAtWorkSelected, setFemalesAtWorkSelected] = useState(false);
+  const [financeSelected, setFinanceSelected] = useState(false);
+  const [vacaySelected, setVacaySelected] = useState(false);
+
+  const [queryResults, setQueryResults] = useState();
 
   const metrics = {
     [METRIC_NAMES.age]: {
@@ -42,9 +49,25 @@ const useQueryFilters = () => {
       setter: setPromotionsSelected,
       value: promotionsSelected,
     },
-    [METRIC_NAMES.raises]: {
-      setter: setRaisesSelected,
-      value: raisesSelected,
+    [METRIC_NAMES.position]: {
+      setter: setPositionSelected,
+      value: positionSelected,
+    },
+    [METRIC_NAMES.worklife]: {
+      setter: setWorklifeSelected,
+      value: worklifeSelected,
+    },
+    [METRIC_NAMES.femalesAtWork]: {
+      setter: setFemalesAtWorkSelected,
+      value: femalesAtWorkSelected,
+    },
+    [METRIC_NAMES.finance]: {
+      setter: setFinanceSelected,
+      value: financeSelected,
+    },
+    [METRIC_NAMES.vacay]: {
+      setter: setVacaySelected,
+      value: vacaySelected,
     },
   };
 
@@ -68,29 +91,65 @@ const useQueryFilters = () => {
     .map(([metricName, isMetricSelected]) => isMetricSelected && metricName)
     .filter(Boolean);
 
-  const dateRange = [['2-19', '4-22']];
+  const makeRequest = () => {
+    const genderSalaryPosition =
+      queryFilters.length === 3 &&
+      ['gender', 'salary', 'position'].every((filter) => queryFilters.includes(filter)) &&
+      'https://github.com/azulverdosa/Avanade_Hackathon_March_2023/blob/main/src/images/SalaryGenderRole.png?raw=true';
+    const genderPosition =
+      queryFilters.length === 2 &&
+      ['gender', 'position'].every((filter) => queryFilters.includes(filter)) &&
+      'https://github.com/azulverdosa/Avanade_Hackathon_March_2023/blob/main/src/images/GenderRoleHeadcountPieCharts.png?raw=true  ';
+    const workLife =
+      queryFilters.length === 1 &&
+      ['work life'].every((filter) => queryFilters.includes(filter)) &&
+      'https://github.com/azulverdosa/Avanade_Hackathon_March_2023/blob/main/src/images/WLSeniority.png?raw=true';
+    const femalesAtWork =
+      queryFilters.length === 1 &&
+      ['females at work'].every((filter) => queryFilters.includes(filter)) &&
+      'https://github.com/azulverdosa/Avanade_Hackathon_March_2023/blob/main/src/images/FemalePercentageOverYearsGraph.png?raw=true';
+    const finance =
+      queryFilters.length === 1 &&
+      ['finance'].every((filter) => queryFilters.includes(filter)) &&
+      'https://github.com/azulverdosa/Avanade_Hackathon_March_2023/blob/main/src/images/GenderRoleFinance.png?raw=true';
+    const error =
+      'https://www.shutterstock.com/image-vector/404-error-page-funny-design-260nw-1761026456.jpg';
 
-  const makeRequest = async () => {
-    try {
-      const res = await axios.get('http://mockapi/graphs', {
-        params: {
-          keywords: queryFilters.join(','),
-          dates: dateRange.join(','),
-        },
-        responseType: 'blob',
-      });
+    const blah = [
+      finance,
+      genderSalaryPosition,
+      genderPosition,
+      workLife,
+      femalesAtWork,
+      error,
+    ].filter(Boolean);
+    setQueryResults(...blah);
+    console.log('Query Sent');
 
-      if (res.status === 200) {
-        console.log('Query Sent');
-
-        // get res.data >>> an image blob
-        // const blobURL = URL.createObjectURL(res.data)
-        // setQueryResults(blobURL)
-      }
-    } catch (err) {
-      console.error('ERROR: ', err);
-    }
+    console.log(queryFilters);
   };
+
+  // const makeRequestToAPI = async () => {
+  //   try {
+  //     const res = await axios.get('http://mockapi/graphs', {
+  //       params: {
+  //         keywords: queryFilters.join(','),
+  //         dates: dateRange.join(','),
+  //       },
+  //       responseType: 'blob',
+  //     });
+
+  //     if (res.status === 200) {
+  //       console.log('Query Sent');
+
+  //       // get res.data >>> an image blob
+  //       // const blobURL = URL.createObjectURL(res.data)
+  //       // setQueryResults(blobURL)
+  //     }
+  //   } catch (err) {
+  //     console.error('ERROR: ', err);
+  //   }
+  // };
 
   return {
     makeRequest,
