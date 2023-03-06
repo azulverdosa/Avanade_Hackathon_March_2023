@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography';
 import { Box } from '@mui/system';
 import { Paper } from '@mui/material';
 
-export default function Highlights({ show }) {
+export default function Home({ show }) {
   return (
     show && (
       <div>
