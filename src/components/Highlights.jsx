@@ -24,7 +24,7 @@ export default function Highlights({ show }) {
         >
           <Box style={{ display: 'flex' }}>
             <Box>
-              <Title>Highlights</Title>
+              <Title>Activity Log</Title>
               <Typography component="p" variant="h4">
                 Cindy Lauper
               </Typography>
@@ -37,7 +37,7 @@ export default function Highlights({ show }) {
                 />
               </Box>
               <Typography component="p" variant="h4">
-                Promoted to CEO on 15 March, 2023
+                Promoted to CEO on March 15, 2023
               </Typography>
 
               <Typography component="p" color="text.secondary" sx={{ flex: 1 }}>
@@ -70,7 +70,7 @@ export default function Highlights({ show }) {
         >
           <Box style={{ display: 'flex' }}>
             <Box>
-              <Title>Highlights</Title>
+              <Title>Activity Log</Title>
               <Typography component="p" variant="h4">
                 Beyoncé
               </Typography>
@@ -83,7 +83,7 @@ export default function Highlights({ show }) {
                 />
               </Box>
               <Typography component="p" variant="h4">
-                Newest member of the HR team, Feb 26, 2023
+                Newest member of the HR team on Feb 26, 2023
               </Typography>
 
               <Typography component="p" color="text.secondary" sx={{ flex: 1 }}>
@@ -117,7 +117,7 @@ export default function Highlights({ show }) {
         >
           <Box style={{ display: 'flex' }}>
             <Box>
-              <Title>Highlights</Title>
+              <Title>Activity Log</Title>
               <Typography component="p" variant="h4">
                 Ken Jeong
               </Typography>
@@ -130,7 +130,7 @@ export default function Highlights({ show }) {
                 />
               </Box>
               <Typography component="p" variant="h4">
-                Celebrates 10 Years at the Company, Jan 16, 2023
+                Celebrates 10 Years at the company on Jan 16, 2023
               </Typography>
 
               <Typography component="p" color="text.secondary" sx={{ flex: 1 }}>
@@ -164,7 +164,7 @@ export default function Highlights({ show }) {
         >
           <Box style={{ display: 'flex' }}>
             <Box>
-              <Title>Highlights</Title>
+              <Title>Activity Log</Title>
               <Typography component="p" variant="h4">
                 Priyanka Chopra
               </Typography>
