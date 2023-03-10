@@ -1,8 +1,6 @@
-# TEMPLATE
+# BRIDGE
 
-# Put Your Title Here
-
-> An algorithm that plots data based on employee demographics. Live demo [here](http://demoexamplecomingsoon.com 'Not a real link') (coming soon).
+> An algorithm that plots data based on employee demographics. Live demo [here](https://avanade-iwd.devpost.com/project-gallery 'devpost link') .
 
 ## Table of Contents
 
@@ -11,6 +9,7 @@
 - [Features](#features)
 - [Screenshots](#screenshots)
 - [Setup](#setup)
+- [Limitations](#limitations)
 - [Usage](#usage)
 - [Project Status](#project-status)
 - [Room for Improvement](#room-for-improvement)
@@ -37,10 +36,6 @@ At the heart of this issue, we believe that companies could be more transparent 
 ![React](https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black)
 ![Python](https://img.shields.io/badge/Python-47A248.svg?style=for-the-badge&logo=Python&logoColor=white)
 
-## Limitations
-
-> Currently the graphs are not dynamically generated because it took too much time to figure out out to connect an API to make requests to generate the visialise ations. The only graphs that generate are the Females at Work and Ffnance report in the favouroites list, the Work Life Balance report in the Lifestyle reports, the selected parameters of Gender+ Salary + Position will generate an image and, Gender + Position. We plan on continuing to develop the APi to be able to generate the graph dynamically.
-
 ## Features
 
 Welcome to BRIDGE:
@@ -48,13 +43,11 @@ Welcome to BRIDGE:
 - Landing Page
 
   ![Home Page](src/images/home.png 'Home Page')
-  Description of screenshot here
 
 Selecting Paramters:
 
-- Which metrics you want in your graph
+- Which metrics you want in your graph <br/>
   ![metric selection](src/images/selectingparameters.png 'Home Page')
-  Description of screenshot here
 
 Graph Generator:
 
@@ -66,28 +59,24 @@ Employees Included:
 - Complete list of the employees included in the data set:
 
   ![employees](src/images/employees.png 'Home Page')
-  Description of screenshot here
 
 Next Steps:
 
 - Suggestions based on the results:
 
   ![Nextsteps](src/images/suggestions.png 'Home Page')
-  Description of screenshot here
 
 Activity Log:
 
 - Company and employee highlighths:
 
   ![highlights](src/images/highlights.png 'Home Page')
-  Description of screenshot here
 
 Articles:
 
 - List of trending articles:
 
   ![articles](src/images/articles.png 'Home Page')
-  Description of screenshot here
 
 Learning Tools:
 
@@ -95,6 +84,10 @@ Learning Tools:
 
   ![learning tools](src/images/learning.png 'Home Page')
   Description of screenshot here
+
+## Limitations
+
+> Currently the graphs are not dynamically generated because it took too much time to figure out out to connect an API to make requests to generate the visialise ations. The only graphs that generate are the Females at Work and Ffnance report in the favouroites list, the Work Life Balance report in the Lifestyle reports, the selected parameters of Gender+ Salary + Position will generate an image and, Gender + Position. We plan on continuing to develop the APi to be able to generate the graph dynamically.
 
 ## Setup
 
@@ -141,16 +134,19 @@ Status: In Progress
 
 Improvement Thoughts:
 
-- Finsihed the Training aspect with course links availabe
+- Currently the graphs are not dynamically generated, would like to learn more about using React+Python and be able to create custom graphs.
 
-- Styling needs to be streamlined a bit
+- Finish the 'Training' aspect with course links available.
 
-- the favourites section is hard coded and I want to make it dynamic
+- Styling needs to be updated a bit.
+
+- The favourites section is hard coded and I want to make it dynamic.
 
 To do:
 
 - [ ] Training Tab
-- [ ] develop favouotes
+- [ ] Develop favourites
+- [ ] Allow for custom graphs
 
 ## Acknowledgements
 
