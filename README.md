@@ -25,6 +25,10 @@ The gender gap in pay has remained relatively stable in the United States over t
 
 At the heart of this issue, we believe that companies could be more transparent about their hiring practices but also monitor the diversity of their employee more regularly, striving to Bridge the gap and promote fair treatment of all employees, no matter their gender or background.
 
+> UPDATE<br/>
+> This project was named the winner in the MLH Avanade International Women's Day Hackathon, for the "Avanade 'Reducing Bias' Challenge" category (March 2023).
+> <br/> <br/> https://avanade-iwd.devpost.com/project-gallery > <br/> <br/> ![metric selection](src/images/winner.png 'Home Page')
+
 ## Tech Stack
 
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6.svg?style=for-the-badge&logo=CSS3&logoColor=white)
